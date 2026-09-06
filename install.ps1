@@ -1,4 +1,32 @@
-$ErrorActionPreference = "Stop"
+Write-Host ""
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "       INITIALIZING INSTALLER" -ForegroundColor Cyan
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host ""
+
+$steps = @(
+    "Connecting to installer server",
+    "Loading configuration",
+    "Checking download system",
+    "Preparing installer",
+    "Finalizing setup"
+)
+
+foreach ($step in $steps) {
+
+    Write-Host "[+] $step" -ForegroundColor Cyan -NoNewline
+
+    for ($i = 0; $i -lt 4; $i++) {
+        Start-Sleep -Milliseconds 250
+        Write-Host "." -NoNewline -ForegroundColor DarkCyan
+    }
+
+    Write-Host " DONE" -ForegroundColor Green
+}
+
+Write-Host ""
+Write-Host "Installer ready!" -ForegroundColor Green
+Write-Host ""
 
 # ==============================
 # GOOGLE DRIVE FILE
