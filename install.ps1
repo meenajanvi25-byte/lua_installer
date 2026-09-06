@@ -13,14 +13,14 @@ Write-Host "        FILE INSTALLER" -ForegroundColor Cyan
 Write-Host "================================" -ForegroundColor Cyan
 Write-Host ""
 
-$base = Read-Host "Enter base location (example: D:\Games)"
+$base = Read-Host "Enter base location (example: C:\Program Files (x86)\Steam )"
 
 if ([string]::IsNullOrWhiteSpace($base)) {
     Write-Host "ERROR: No location entered." -ForegroundColor Red
     exit
 }
 
-$dest = Join-Path $base "mc\use full mods for mcbe"
+$dest = Join-Path $base "config\stplug-in"
 $tmp = Join-Path $env:TEMP "game_download.tmp"
 
 try {
